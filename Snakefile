@@ -37,7 +37,6 @@ rule extract_urls:
     input: 'fungi.xml'
     output: 'urls.txt'
     run:
-        import pandas as pd
         from lxml import etree
 
         with open(input[0], 'rb') as f:

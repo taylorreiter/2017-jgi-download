@@ -30,7 +30,7 @@ rule download_index:
     input: 'cookies'
     output: 'fungi.xml'
     shell: """
-        curl 'http://genome.jgi.doe.gov/ext-api/downloads/get-directory?organism=fungi' -b {input[0]} > {output[0]}
+        curl -L 'https://genome.jgi.doe.gov/ext-api/downloads/get-directory?organism=fungi' -b {input[0]} > {output[0]}
     """
 
 rule extract_urls:

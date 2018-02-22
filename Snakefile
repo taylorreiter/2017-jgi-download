@@ -58,5 +58,5 @@ rule download_file:
     params:
         dataset=lambda w: INPUTS[w.dataset]
     shell: """
-        curl '{BASE_URL}{params.dataset}' -b cookies > {output[0]}
+        curl -L '{BASE_URL}{params.dataset}' -b cookies > {output[0]}
     """
